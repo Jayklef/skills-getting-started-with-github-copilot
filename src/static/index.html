@@ -20,37 +20,6 @@
           <p>Loading activities...</p>
         </div>
       </section>
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          fetch("/activities")
-            .then((response) => response.json())
-            .then((activities) => {
-              const activitiesList = document.getElementById("activities-list");
-              activitiesList.innerHTML = ""; // Clear loading message
-              for (const [name, details] of Object.entries(activities)) {
-                const card = document.createElement("div");
-                card.className = "activity-card";
-                card.innerHTML = `
-                  <h4>${name}</h4>
-                  <p>${details.description}</p>
-                  <p><strong>Schedule:</strong> ${details.schedule}</p>
-                  <p><strong>Max Participants:</strong> ${details.max_participants}</p>
-                  <div>
-                    <strong>Participants:</strong>
-                    <ul>
-                      ${details.participants.map((participant) => `<li>${participant}</li>`).join("")}
-                    </ul>
-                  </div>
-                `;
-                activitiesList.appendChild(card);
-              }
-            })
-            .catch((error) => {
-              console.error("Error loading activities:", error);
-              activitiesList.innerHTML = "<p>Failed to load activities.</p>";
-            });
-        });
-      </script>
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
