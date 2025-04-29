@@ -76,7 +76,7 @@ section h3 {
 
 .activity-card ul {
   margin-top: 10px;
-  padding: 10px 20px; /* Adjust padding for better spacing */
+  padding: 10px 20px; /* Ensure consistent padding */
   list-style-type: disc;
   background-color: #f9f9f9;
   border-radius: 5px;
@@ -93,7 +93,7 @@ section h3 {
 }
 
 .activity-card ul li:last-child {
-  border-bottom: none; /* Remove border for the last item */
+  border-bottom: none; /* Ensure no border for the last item */
 }
 
 .activity-card div {
